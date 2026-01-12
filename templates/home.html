@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>California Housing Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        h2 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h1>California Housing Price Prediction</h1>
+
+<form action="/predict" method="post">
+
+    <input type="text" name="MedInc" placeholder="Median Income" required><br>
+    <input type="text" name="HouseAge" placeholder="House Age" required><br>
+    <input type="text" name="AveRooms" placeholder="Average Rooms" required><br>
+    <input type="text" name="AveBedrms" placeholder="Average Bedrooms" required><br>
+    <input type="text" name="Population" placeholder="Population" required><br>
+    <input type="text" name="AveOccup" placeholder="Average Occupancy" required><br>
+    <input type="text" name="Latitude" placeholder="Latitude" required><br>
+    <input type="text" name="Longitude" placeholder="Longitude" required><br><br>
+
+    <button type="submit">Predict</button>
+</form>
+
+{% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+{% endif %}
+
+</body>
+</html>
